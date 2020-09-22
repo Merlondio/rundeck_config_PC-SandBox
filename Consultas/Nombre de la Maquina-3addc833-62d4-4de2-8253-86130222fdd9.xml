@@ -1,0 +1,44 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description>Consultara el nombre de la maquina y mas</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>Consultas</group>
+    <id>3addc833-62d4-4de2-8253-86130222fdd9</id>
+    <loglevel>INFO</loglevel>
+    <name>Nombre de la Maquina</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: PI</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='true' strategy='parallel'>
+      <command>
+        <description>Variables de Entorno</description>
+        <node-step-plugin type='stub-node-step'>
+          <configuration>
+            <entry key='data' value='Nombre: &apos;Adolfo&apos;' />
+            <entry key='format' value='properties' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <errorhandler keepgoingOnSuccess='true'>
+          <exec>echo ${result.message}</exec>
+        </errorhandler>
+        <scriptargs />
+        <scriptfile>/home/auto/hostname.sh</scriptfile>
+      </command>
+    </sequence>
+    <uuid>3addc833-62d4-4de2-8253-86130222fdd9</uuid>
+  </job>
+</joblist>
