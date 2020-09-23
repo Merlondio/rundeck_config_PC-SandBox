@@ -21,7 +21,7 @@
     <nodesSelectedByDefault>true</nodesSelectedByDefault>
     <plugins />
     <scheduleEnabled>true</scheduleEnabled>
-    <sequence keepgoing='true' strategy='parallel'>
+    <sequence keepgoing='false' strategy='node-first'>
       <command>
         <description>Variables de Entorno</description>
         <node-step-plugin type='stub-node-step'>
@@ -32,7 +32,7 @@
         </node-step-plugin>
       </command>
       <command>
-        <errorhandler keepgoingOnSuccess='true'>
+        <errorhandler>
           <exec>echo ${result.message}</exec>
         </errorhandler>
         <scriptargs />
