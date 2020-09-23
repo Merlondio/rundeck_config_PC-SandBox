@@ -1,0 +1,44 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option name='value_text' required='true' />
+      </options>
+    </context>
+    <defaultTab>nodes</defaultTab>
+    <description>Actualiza configuracion del archivo config.cfg</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>configuraciones</group>
+    <id>7a3d8b07-51fa-4e6e-b98f-29ac2bedd69b</id>
+    <loglevel>INFO</loglevel>
+    <name>Actualiza config.cfg</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: PI</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <node-step-plugin type='com.batix.rundeck.plugins.AnsiblePlaybookInlineWorkflowNodeStep'>
+          <configuration>
+            <entry key='ansible-base-dir-path' value='/home/auto' />
+            <entry key='ansible-become' value='false' />
+            <entry key='ansible-playbook-inline' value='---&#10;- name: &apos;Actualizacion de Fichero config.cfg&apos;&#10;  gather_facts: false&#10;  hosts: all&#10;  tasks:&#10;  - name: &apos;Actualizacion value: en config.cfg&apos;&#10;    lineinfile:&#10;      path: /home/auto/config.cfg&#10;      regexp: &apos;^value:&apos;&#10;      line: &apos;value: ${option.value_text}&apos;' />
+            <entry key='ansible-ssh-passphrase-option' value='option.password' />
+            <entry key='ansible-ssh-use-agent' value='false' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>7a3d8b07-51fa-4e6e-b98f-29ac2bedd69b</uuid>
+  </job>
+</joblist>
