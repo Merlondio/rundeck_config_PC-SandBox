@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <id>f53c2e4a-7093-405e-a333-e8b20e4e5246</id>
+    <loglevel>INFO</loglevel>
+    <name>Prueba</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: PI</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='parallel'>
+      <command>
+        <script><![CDATA[echo "Iniciamos script"
+
+hostname]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>f53c2e4a-7093-405e-a333-e8b20e4e5246</uuid>
+  </job>
+</joblist>
