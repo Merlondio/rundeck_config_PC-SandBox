@@ -38,6 +38,9 @@
         <scriptargs />
         <scriptfile>/home/auto/hostname.sh</scriptfile>
       </command>
+      <command>
+        <exec>hostname</exec>
+      </command>
     </sequence>
     <uuid>3addc833-62d4-4de2-8253-86130222fdd9</uuid>
   </job>
